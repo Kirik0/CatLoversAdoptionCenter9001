@@ -62,8 +62,4 @@ public class Animal implements Serializable {
 	public String toString() {
 		return "Animal [id=" + id + ", name=" + name + ", cave=" + cave + "]";
 	}
-	
-	public String inheritedString() {
-		return "id=" + id + ", name=" + name + ", cave=" + cave;
-	}
 }
