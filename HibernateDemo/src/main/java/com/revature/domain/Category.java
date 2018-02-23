@@ -2,22 +2,13 @@ package com.revature.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "CATEGORY")
-public class Category implements Serializable {
-
-	public Category(int id, String name) {
+@Table (name="CATEGORY")
+public class Category implements Serializable{
+	public Category() {
 		super();
-		this.id = id;
-		this.name = name;
 	}
 
 	public Category(String name) {
@@ -25,16 +16,19 @@ public class Category implements Serializable {
 		this.name = name;
 	}
 
-	public Category() {
+	public Category(int id, String name) {
 		super();
+		this.id = id;
+		this.name = name;
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "categorySequence")
-	@SequenceGenerator(allocationSize = 1, name = "categorySequence", sequenceName = "SQ_CATEGORY_PK")
-	@Column(name = "CATEGORY_ID")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="categorySequence")
+	@SequenceGenerator(allocationSize=1,name="categorySequence",sequenceName="SQ_CATEGORY_PK")	//sequenceName - how it shows up on SQL side
+	@Column(name="CATEGORY_ID")
 	private int id;
-	@Column(name = "CATEGORY_NAME")
+	
+	@Column(name="CATEGORY_NAME")
 	private String name;
 
 	public int getId() {
@@ -57,5 +51,4 @@ public class Category implements Serializable {
 	public String toString() {
 		return "Category [id=" + id + ", name=" + name + "]";
 	}
-
 }

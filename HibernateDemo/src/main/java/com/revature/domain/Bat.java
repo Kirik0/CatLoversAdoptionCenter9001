@@ -33,7 +33,7 @@ public class Bat extends Animal implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Bat [wingspan=" + wingspan + "]";
+		return "Bat [" + super.inheritedString() + " wingspan=" + wingspan + "]";
 	}
 
 }
