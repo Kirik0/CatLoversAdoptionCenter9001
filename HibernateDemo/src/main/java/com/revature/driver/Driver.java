@@ -38,11 +38,11 @@ public class Driver {
 		
 		//funWithCache();
 		
-		//caveInit();
+		caveInit();
 		
-		//animalInit();
+		animalInit();
 		
-		//moreAnimals();
+		moreAnimals();
 		
 		BatDaoImpl bdi = new BatDaoImpl();
 		BearDaoImpl bearDaoImpl = new BearDaoImpl();
@@ -54,9 +54,8 @@ public class Driver {
 		}
 		
 		System.out.println("Total bears: " + bearDaoImpl.countBears());
-		bdi.getTotalWingSpan();
-		
 		bearDaoImpl.getBearsByFNameInitial("G");
+		bdi.getTotalWingSpan();
 	}
 		
 	static void getVsLoad() {

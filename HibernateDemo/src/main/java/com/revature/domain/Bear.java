@@ -25,7 +25,7 @@ public class Bear extends Animal implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Bear [bearType=" + bearType + "]";
+		return "Bear [" + super.inheritedString() + " bearType=" + bearType + "]";
 	}
 
 	public String getBearType() {

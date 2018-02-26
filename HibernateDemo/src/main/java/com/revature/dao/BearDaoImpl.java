@@ -112,15 +112,25 @@ public class BearDaoImpl implements BearDao {
 		return n.longValue();
 
     }
-	
+
 	@Override
-	public List<Bear> getBearsByFNameInitial(String initial) {
-		
-		Session s = HibernateUtil.getSession();
-		List<Bear> bears = s.createCriteria(Bear.class).add(Restrictions.like("name", initial+"%")).list();
-		for (Bear b : bears) {
-			System.out.println(b.toString());
-		}
-		return null;
+
+	    public List<Bear> getBearsByFNameInitial(String initial) {
+
+	        
+
+	        Session s = HibernateUtil.getSession();
+
+	        List<Bear> bears = s.createCriteria(Bear.class).add(Restrictions.like("name", initial+"%")).list();
+
+	        for (Bear b : bears) {
+
+	            System.out.println(b.toString());
+
+	        }
+
+	        return null;
 	}
+
+	    
 }
