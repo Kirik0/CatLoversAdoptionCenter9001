@@ -13,4 +13,6 @@ public interface BearDao {
 	public void addBears(List<Bear> bearList);
 	
 	public long countBears();
+	
+	public List<Bear> getBearsByFNameInitial(String initial);
 }

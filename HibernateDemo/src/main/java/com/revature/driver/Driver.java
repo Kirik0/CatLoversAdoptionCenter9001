@@ -55,6 +55,8 @@ public class Driver {
 		
 		System.out.println("Total bears: " + bearDaoImpl.countBears());
 		bdi.getTotalWingSpan();
+		
+		bearDaoImpl.getBearsByFNameInitial("G");
 	}
 		
 	static void getVsLoad() {
