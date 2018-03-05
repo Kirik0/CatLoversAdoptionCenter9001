@@ -15,7 +15,8 @@ import com.revature.util.HibernateUtil;public class CatDaoImpl implements CatDao
 
         return cats;
 
-    }    @Override
+    }
+	@Override
 
     public Cat getCatById(int id) {
 

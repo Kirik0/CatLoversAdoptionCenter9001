@@ -1,12 +1,13 @@
 package com.revature.driver;
 
-import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.revature.beans.*;
-import com.revature.dao.CatDaoImpl;
+import com.revature.client.KittyClient;
 import com.revature.dao.ShelterDao;
 import com.revature.dao.ShelterDaoImpl;
 import com.revature.util.HibernateUtil;
@@ -16,6 +17,16 @@ public class Driver {
 	public static void main(String[] args) {
 
 		
+		/*KittyController kc = new KittyController();
+		kc.getAllKitties();*/
+		
+		ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+		KittyClient kc = ac.getBean("kittyClient", KittyClient.class);
+		kc.setResourceUrl("http://localhost:8085");
+		
+		System.out.println(kc.getKitties());
+		
+		/*
 		System.out.println("Hello");
 		insertUser();
 		int shelterID = insertShelter();
@@ -28,11 +39,9 @@ public class Driver {
 			System.out.println(c);
 		}
 		
-		//getCatsByUserID(int userID);
+		//getCatsByUserId(int userID);
 		
-		//getCatsByShelterID(int shelterID);
-		
-		
+		*/
 	}
 	
 	static void insertUser() {
