@@ -35,6 +35,8 @@ public class Driver {
 		
 		//Use the interface
 		CatHouse catService = service.getPort(CatHouse.class);
+		//CatHouse catHouse = super.getPort(new QName("http://service.revature.com/", "CatHouseImplPort"), CatHouse.class);
+		//CatHouse catHouseTest = catHouse.getCatHouseImplPort();
 		
 		Cat jimmy = new Cat();
 		jimmy.setName("Jimmy");
